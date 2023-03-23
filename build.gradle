@@ -28,7 +28,7 @@ gocdPlugin {
     vendorUrl = 'https://github.com/absa-group/s3-artifact-plugin'
 
     githubRepo {
-        owner = System.getenv('GITHUB_USER') ?: 'bob'
+        owner = System.getenv('GITHUB_USER') ?: 'absa-group'
         repo = 's3-artifact-plugin-cldfrc'
         token = System.getenv('GITHUB_TOKEN') ?: 'bad-token'
     }
