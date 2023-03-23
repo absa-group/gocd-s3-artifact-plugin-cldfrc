@@ -22,7 +22,7 @@ jobs:
     - name: Execute Gradle build
       run: ./gradlew githubRelease --debug
       env:
-        GITHUB_TOKEN: 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
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PRERELEASE: No
     
     - name: Execute Gradle build
