@@ -25,11 +25,11 @@ gocdPlugin {
     name = 'Artifact plugin for S3'
     description = 'Plugin allows to store and fetch artifacts using Amazon S3'
     vendorName = 'Diogo Oliveira'
-    vendorUrl = 'https://github.com/Diogomrol/s3-artifact-plugin'
+    vendorUrl = 'https://github.com/absa-group/s3-artifact-plugin'
 
     githubRepo {
         owner = System.getenv('GITHUB_USER') ?: 'bob'
-        repo = 's3-artifact-plugin'
+        repo = 's3-artifact-plugin-cldfrc'
         token = System.getenv('GITHUB_TOKEN') ?: 'bad-token'
     }
 
