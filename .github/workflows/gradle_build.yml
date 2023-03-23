@@ -20,7 +20,7 @@ jobs:
       run: ./gradlew -q :tasks --all
     
     - name: Execute Gradle build
-      run: ./gradlew githubRelease --info
+      run: ./gradlew githubRelease --debug
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PRERELEASE: No
