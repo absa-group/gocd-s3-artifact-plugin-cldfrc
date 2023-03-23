@@ -20,9 +20,10 @@ jobs:
       run: ./gradlew -q :tasks --all
     
     - name: Execute Gradle build
-      run: ./gradlew tasks clean test assemble githubRelease
+      run: ./gradlew tasks clean test assemble gocdPlugin --info
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PRERELEASE: No
       
 #    - name: Upload Release Asset
 #      id: upload-release-asset
