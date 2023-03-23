@@ -20,13 +20,19 @@ jobs:
       run: ./gradlew -q :tasks --all
 
     - name: Execute Gradle build
-      run: ./gradlew githubRelease --debug
+      run: ./gradlew clean test assemble
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PRERELEASE: No
     
-    - name: Execute Gradle build
+    - name: list lib
       run: ls -la lib/
+
+    - name: Execute Gradle build
+      run: ./gradlew githubRelease --debug
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PRERELEASE: No
 
 #    - name: Upload Release Asset
 #      id: upload-release-asset
