@@ -16,8 +16,8 @@ jobs:
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
 
-    - name: Execute Gradle build
-      run: gradle tasks -all
+    - name: list tasks
+      run: ./gradlew -q :tasks --all
     
     - name: Execute Gradle build
       run: ./gradlew tasks clean test assemble release
