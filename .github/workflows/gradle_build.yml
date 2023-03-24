@@ -31,7 +31,11 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: af-south-1
-    
+
+    - name: sts caller idnetiy
+      run: |
+        aws sts get-caller-identity
+
     - name: Upload folder to S3
       run: |
-        aws s3 sync build/libs/ s3://afs1-prod-cldfrc-gocd-gocd-build-dependencies/gocd-s3-artifact-plugin-cldfrc
+        aws s3 sync build/libs/ s3://afs1-prod-cldfrc-gocd-gocd-build-dependencies/gocd-s3-artifact-plugin-cldfrc --region af-south-1
